@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odev.Login"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="5" Margin="10">
+           <Frame CornerRadius="15" Padding="20" BackgroundColor="White" WidthRequest="300">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                
+                <StackLayout x:Name="loginEkran" Spacing="1" IsVisible="True">
+                    <Label Text="Oturum AÇ" FontSize="20" FontAttributes="Bold"/>
+                    <Entry x:Name="txtEmail" Placeholder="E-posta" Keyboard="Email" Margin="5" TextColor="Black" TextChanged="OnEmailTextChanged"/>
+                    <Label x:Name="emailError" TextColor="Red" FontSize="Small" IsVisible="False" />
+                    <Entry x:Name="txtPassword" Placeholder="şifre" IsPassword="True" Margin="5" TextColor="Black" WidthRequest="250" TextChanged="OnPasswordTextChanged" />
+                    <Label x:Name="passwordError" TextColor="Red" FontSize="Small" IsVisible="False" />
+                    <Button Text="Giriş Yap" Clicked="LoginInClicked" CornerRadius="8" TextColor="White" BackgroundColor="DarkBlue" FontSize="18" Margin="8"/>
+                    <Button Text="Hesabım Yok" BackgroundColor="Transparent" HorizontalOptions="Center" CornerRadius="18" TextColor="DarkGray" FontSize="17" Clicked="KayitLoginEkraniGoster" Margin="8"/>
+                    </StackLayout>
+
+                    <StackLayout x:Name="kayitEkran" Spacing="10" IsVisible="False">
+                    <Label Text="Kaydol"  FontSize="20" FontAttributes="Bold"/>
+                    <Entry x:Name="txtName" Placeholder="Kullanıcı Adı" Keyboard="Text" TextTransform="Uppercase" Margin="5" TextColor="Black"/>
+                    <Entry x:Name="txtREmail" Placeholder="E-posta" Keyboard="Email" Margin="5" TextColor="Black" WidthRequest="250" TextChanged="OnEmailTextChanged" />
+                    <Label x:Name="regEmailError" TextColor="Red" FontSize="Small" IsVisible="False" />
+                    <Entry x:Name="txtRPassword" Placeholder="Şifre" IsPassword="True" Margin="5" TextColor="Black" WidthRequest="250" TextChanged="OnPasswordTextChanged" />
+                    <Label x:Name="regPasswordError" TextColor="Red" FontSize="Small" IsVisible="False" />
+                    <Button Text="KAYIT OL" Clicked="RegisterClicked" CornerRadius="8" TextColor="White" FontSize="17" BackgroundColor="DarkBlue"/>
+                    <Button Text="Zaten Hesabım var" BackgroundColor="Transparent" CornerRadius="18" FontAttributes="Bold" HorizontalOptions="Center" TextColor="DarkGray" FontSize="18" Clicked="KayitLoginEkraniGoster"/>
+                    </StackLayout>
+
+                    </StackLayout>
+                       </Frame>
+                </VerticalStackLayout>
+                </ContentPage>

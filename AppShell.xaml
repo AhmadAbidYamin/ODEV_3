@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:odev"
+       x:Class="odev.AppShell"
+       
+       BackgroundColor="DarkBlue">
+
+       <Shell.Resources>
+            <ResourceDictionary>
+                <Color x:Key="FlyoutTextColorLight">Black</Color>
+                <Color x:Key="FlyoutTextColorDark">White</Color>
+                <Style TargetType="Label">
+                <Setter Property="TextColor">
+                <Setter.Value>
+                <AppThemeBinding Light="{StaticResource FlyoutTextColorLight}" Dark="{StaticResource FlyoutTextColorDark}" />
+                </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="20" />
+                </Style>
+            </ResourceDictionary>
+        </Shell.Resources>
+
+
+
+
+    <ShellContent Route="WelcomePage"
+            ContentTemplate="{DataTemplate local:WelcomePage}"
+            Title="Ana Sayfa" Icon="user.png"/>
+    <ShellContent Route="Doviz"
+            ContentTemplate="{DataTemplate local:Doviz}"
+            Title="Kurlar" Icon="money.png"/>
+    <ShellContent Route="Haberler" 
+            ContentTemplate="{DataTemplate local:Haberler}"
+            Title="Haberler" Icon="newspaper.png"/>
+    <ShellContent Route="TodoListPage" 
+            ContentTemplate="{DataTemplate local:TodoListPage}" 
+            Title="Yapılacaklar" Icon="check.png"/>
+    <ShellContent Route="HavaDurumu" 
+            ContentTemplate="{DataTemplate local:HavaDurumu}" 
+            Title="Hava Durumu" Icon="hava.png"/>
+    <ShellContent Route="Ayarlar" 
+            ContentTemplate="{DataTemplate local:Ayarlar}"
+            Title="Ayarlar" Icon="setting.png"/>
+ </Shell>

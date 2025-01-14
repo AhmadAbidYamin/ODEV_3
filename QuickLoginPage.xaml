@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odev.QuickLoginPage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+        <AbsoluteLayout>
+
+        <ImageButton Source="out.png" 
+                     Clicked="LogoutClicked"
+                     WidthRequest="30" 
+                     HeightRequest="30"
+                     BackgroundColor="Transparent"
+                     CornerRadius="15"
+                     AbsoluteLayout.LayoutBounds="0.02,0.01,30,30"
+                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10" Margin="20"
+                             AbsoluteLayout.LayoutBounds="0.5,0.2,AutoSize,AutoSize"
+                             AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <Frame CornerRadius="15" Padding="20" BackgroundColor="White"  WidthRequest="300">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="10">
+                    <Image Source="user.png" WidthRequest="100" HeightRequest="120" />
+                   <Label x:Name="lblEmail" FontSize="Title" TextColor="Black" HorizontalTextAlignment="Center"   FontAttributes="Bold" />  
+                    <Entry x:Name="txtPassword" Placeholder="Şifre Giriniz" IsPassword="True" Margin="10" TextColor="Black" WidthRequest="250" />
+                    <Button Text="Giriş Yap" Clicked="LoginInClicked" TextColor="White" BackgroundColor="DarkBlue" FontSize="20" FontAttributes="Bold" WidthRequest="250" CornerRadius="8"/>
+
+                </StackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+</ContentPage>

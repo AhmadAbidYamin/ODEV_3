@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odev.AddTaskPage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+        <StackLayout Padding="20">
+        <Label Text="Görev" FontSize="22" FontAttributes="Bold"   Margin="10"/>
+        <Entry x:Name="TaskNameEntry" Text="{Binding Name}" BackgroundColor="LightGray"  Placeholder="Görev Adı" />
+
+        <Label Text="Detay" FontSize="22" FontAttributes="Bold"  Margin="10"/>
+        <Editor x:Name="TaskDetailEditor" Text="{Binding Detail}" BackgroundColor="LightGray" Placeholder="Detay Giriniz" HeightRequest="100" />
+
+        <DatePicker x:Name="TaskDatePicker" Date="{Binding Date}" FontSize="18" TextColor="Gray" FontAttributes="Bold" Margin="10" />
+        <TimePicker x:Name="TaskTimePicker" FontSize="18"  FontAttributes="Bold" TextColor="Gray" Margin="10" Time="{Binding Time, Mode=TwoWay}" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+        <Button Text="Tamam" FontSize="18" FontAttributes="Bold" BackgroundColor="DarkBlue"  Clicked="SaveTask_Clicked" />
+        <Button Text="İptal" FontSize="18" FontAttributes="Bold"  BackgroundColor="DarkBlue"  Clicked="CancelTask_Clicked" />
+        </StackLayout>
+        </StackLayout>
+</ContentPage>

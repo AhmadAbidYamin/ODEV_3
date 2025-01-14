@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="odev.Ayarlar"
+             Title="Ayarlar"
+                          BackgroundColor="{DynamicResource BackgroundColor}">
+
+
+
+    <StackLayout Padding="20">
+        <Grid ColumnDefinitions="*,*" Padding="10">
+            <Label Grid.Column="0" Text="Dark Mode" FontAttributes="Bold"  FontSize="20" HorizontalOptions="Start"/>
+            <Switch Grid.Column="1" x:Name="themeSwitch" ThumbColor="Gray" OnColor="White" Toggled="OnThemeSwitchToggled" HorizontalOptions="End"/>
+            
+        </Grid>
+        <HorizontalStackLayout Spacing="246" Padding="10">
+            <Label Text="Çıkış" FontSize="20" FontAttributes="Bold"/>
+            <ImageButton Source="out.png" 
+             Background="White"
+             Clicked="LogoutClicked"
+             WidthRequest="30" 
+             HeightRequest="30"
+             BackgroundColor="Transparent"
+             CornerRadius="15"
+            />
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>
